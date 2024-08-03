@@ -1,0 +1,75 @@
+/* Styles spécifiques pour le formulaire d'ajout d'accessoire */
+.add-accessory-form {
+    max-width: 600px; /* Réduit la largeur pour le formulaire spécifique */
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    background-color: #f9f9f9;
+  }
+  
+  /* Styles pour les messages d'erreur */
+  .add-accessory-form .error-message {
+    color: #d9534f;
+    font-size: 14px;
+    margin-bottom: 20px;
+  }
+  
+  /* Styles pour les groupes de champs */
+  .add-accessory-form .form-group {
+    margin-bottom: 20px;
+  }
+  
+  /* Styles pour les labels */
+  .add-accessory-form .form-group label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: #333;
+  }
+  
+  /* Styles pour les champs de texte */
+  .add-accessory-form .form-group input[type="text"],
+  .add-accessory-form .form-group input[type="number"],
+  .add-accessory-form .form-group textarea,
+  .add-accessory-form .form-group select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-size: 16px;
+    line-height: 1.5;
+  }
+  
+  /* Styles pour les zones de texte */
+  .add-accessory-form .form-group textarea {
+    resize: vertical;
+    min-height: 100px;
+  }
+  
+  /* Styles pour les boutons */
+  .add-accessory-form button {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 16px;
+    color: #fff;
+    background-color: #007bff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .add-accessory-form button:hover {
+    background-color: #0056b3;
+  }
+  
+  /* Styles pour la prévisualisation de l'image */
+  .add-accessory-form img {
+    margin-top: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+  }
+  

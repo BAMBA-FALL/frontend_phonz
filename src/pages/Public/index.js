@@ -1,0 +1,10 @@
+export { default as  Layout} from './Layout'
+export { default as Home}  from './Home'
+export { default as Homepage} from './Homepage'
+export { default as Service}  from './Service'
+export { default as Contact}  from './Contact'
+export { default as SearchResults} from './SearchResults'
+export { default as CategoryPage} from './CategoryPage'
+export { default as SubcategoryPage} from './SubcategoryPage'
+
+// export { default as ShoppingCart}  from './ShoppingCart'

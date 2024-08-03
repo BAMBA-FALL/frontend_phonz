@@ -1,0 +1,28 @@
+/* HomepageAdminEdit.css */
+.homepage-admin-edit {
+    padding: 20px;
+}
+
+.edit-form {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.error-message {
+    color: red;
+}
+
+.image-previews {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.image-previews img {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}

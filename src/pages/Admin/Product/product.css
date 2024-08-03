@@ -1,0 +1,57 @@
+.product-container {
+  overflow-x: auto;
+}
+
+.product-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.product-table th,
+.product-table td {
+  padding: 8px;
+  border-bottom: 1px solid #ddd;
+  text-align: left;
+}
+
+.product-table th {
+  background-color: #f2f2f2;
+}
+
+.product-table tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+.product-table tr:hover {
+  background-color: #ddd;
+}
+
+.button-cell {
+  display: flex;
+  justify-content: space-between;
+}
+
+.button-cell button {
+  border: none;
+  background: none;
+  cursor: pointer;
+  padding: 5px;
+  margin-right: 5px;
+}
+.button-cell .btn-voir {
+  color: green;
+}
+.button-cell .btn-edit {
+  color: blue;
+}
+
+.button-cell .btn-delete {
+  color: red;
+}
+
+
+.image-admin{
+  width: 50px;
+  height: 35px;
+  cursor: pointer;
+}

@@ -1,0 +1,55 @@
+/* HomepageAdmin.css */
+.homepage-admin {
+    padding: 20px;
+}
+
+.config-cards {
+    display: flex;
+    flex-direction: column;
+}
+
+.config-card {
+    border: 1px solid #ddd;
+    padding: 20px;
+    margin: 10px 0;
+    border-radius: 5px;
+}
+
+.config-images img {
+    max-width: 100px;
+    max-height: 100px;
+    margin-right: 10px;
+}
+
+.config-actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.btn-edit {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+}
+
+.btn-edit:hover {
+    background-color: #0056b3;
+}
+
+.btn-move {
+    background-color: #28a745;
+    color: #fff;
+    border: none;
+    padding: 5px 10px;
+    margin: 0 5px;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+.btn-move:hover {
+    background-color: #218838;
+}

@@ -1,0 +1,39 @@
+
+ /* confirmationModal.css */
+
+.ModalContent {
+    width: 300px; /* Réglez la largeur du modal selon vos besoins */
+    height: 200px; /* Réglez la hauteur du modal selon vos besoins */
+    overflow: auto;
+    border-radius: 8px;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+    background-color: #ffffff;
+    padding: 20px;
+  }
+  
+  
+  /* Style pour le titre du modal */
+  .ModalTitle {
+    margin-bottom: 10px;
+    font-size: 20px;
+  }
+  
+  /* Style pour le message du modal */
+  .ModalMessage {
+    margin-bottom: 20px;
+  }
+
+  .ModalButton {
+    cursor: pointer;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    background-color: #007bff; 
+    color: #ffffff; 
+    margin-right: 10px;
+  }
+  
+  .ModalButton:last-child {
+    margin-right: 0; 
+  }
+  

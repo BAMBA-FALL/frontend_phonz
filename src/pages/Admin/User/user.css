@@ -1,0 +1,48 @@
+.container {
+  padding: 1rem;
+  background-color: #f4f4f4;
+}
+
+h2 {
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+  color: #333;
+}
+
+.search-bar {
+  margin-bottom: 1rem;
+}
+
+.search-input {
+  margin-right: 0.5rem;
+}
+
+.search-button,
+.clear-button {
+  margin-right: 0.5rem;
+}
+
+.btn-suspendre {
+  color: orange;
+}
+
+.btn-supprimer {
+  color: red;
+}
+
+.btn-suspendre:hover {
+  color: darkorange;
+}
+
+.btn-supprimer:hover {
+  color: darkred;
+}
+
+.modal-cancel-button {
+  background-color: #ccc;
+}
+
+.modal-confirm-button {
+  background-color: #d9534f;
+  color: white;
+}

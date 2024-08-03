@@ -1,0 +1,43 @@
+.subcategory-page {
+  padding: 20px;
+}
+
+.products-list {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px; /* Réduit l'espace entre les éléments */
+  justify-content: center; /* Centre les éléments horizontalement */
+}
+
+.products-item {
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  padding: 10px;
+  margin-bottom: 20px;
+  flex: 1 1 calc(30% - 30px); /* Réduit la largeur pour tenir compte de l'espacement */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-sizing: border-box;
+  max-width: 200px; /* Limite la largeur maximale */
+}
+
+.products-link {
+  text-decoration: none; /* Enlève la décoration par défaut des liens */
+  color: inherit; /* Utilise la couleur héritée */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.products-image-container {
+  margin-top: 10px;
+}
+
+.products-image {
+  max-width: 100%;
+  height: auto;
+  border-radius: 5px;
+}

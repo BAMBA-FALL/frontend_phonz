@@ -1,0 +1,25 @@
+.footer {
+  /* background-color: #f8f9fa; */
+  background-color: #ccc;
+  padding: 20px;
+  margin-top: 10px;
+  border-top: 1px solid #fff;
+}
+
+.footer-content {
+  margin-bottom: 60px; 
+}
+
+.footer-social ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-social ul li {
+  display: inline;
+  margin-right: 10px;
+}
+
+.footer-bottom {
+  padding: 10px 0;
+}
