@@ -4,10 +4,10 @@
   flex-direction: column;
   background-color: #f8f8f8;
   position: sticky;
-  top: 0; /* Colle le header en haut de la page */
-  z-index: 1000; /* Assure que le header est au-dessus des autres éléments */
+  top: 0; 
+  z-index: 1000; 
   width: 100%;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optionnel, pour un effet d'ombre */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
 }
 
 .top-nav, .bottom-nav {
@@ -26,7 +26,7 @@
   justify-content: flex-start;
   position: relative;
   margin: 0;
-  padding: 0; /* Ajoutez ceci pour supprimer le padding */
+  padding: 0;
 }
 
 .logo {
@@ -53,12 +53,12 @@
   padding: 10px 40px;
   border: 1px solid #ccc;
   border-radius: 5px;
-  outline: none; /* Retire le contour par défaut du focus */
+  outline: none; 
 }
 
 .input-search:focus {
-  border-color: #007bff; /* Couleur du contour au focus */
-  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5); /* Ombre au focus */
+  border-color: #007bff; 
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5); 
 }
 
 .search-icon {
@@ -111,7 +111,7 @@
   position: absolute;
   top: -5px;
   right: -10px;
-  background-color: #ff0000; /* Couleur de fond par défaut du badge */
+  background-color: #ff0000; 
   color: white;
   border-radius: 50%;
   padding: 2px 6px;
@@ -119,21 +119,21 @@
   font-weight: bold;
 }
 
-/* Modifier la couleur de fond du badge en fonction du nombre d'articles */
+
 .cart-count-empty {
-  background-color: #f44336; /* Rouge pour le panier vide */
+  background-color: #f44336; 
 }
 
 .cart-count-full {
-  background-color: #4CAF50; /* Vert pour le panier avec des articles */
+  background-color: #4CAF50; 
 }
 
 .dropdown {
   position: relative;
   margin-left: 0;
-  padding: 0; /* Assurez-vous qu'il n'y a pas de padding */
+  padding: 0; 
   border-right: 2px solid #ccc;
-  height: 50px;
+  height: 30px;
   justify-content: center;
   align-items: center;
 }

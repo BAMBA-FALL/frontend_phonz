@@ -9,7 +9,7 @@ import HomePage from './Homepage';
   return (
     <div>
       {/* <CarouselProduct/> */}
-      <HomePage/>
+      {/* <HomePage/> */}
       <ProductList/>
     </div>
 

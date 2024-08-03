@@ -12,11 +12,8 @@
     "@testing-library/jest-dom": "^5.17.0",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
-    "axios": "^1.7.2",
-<<<<<<< HEAD
+    "axios": "^1.7.3",
     "bootstrap": "^5.3.3",
-=======
->>>>>>> dee5755be48440393c77323597d4561bcec40f91
     "ckeditor4-react": "^5.1.0",
     "jquery": "^3.7.1",
     "react": "^18.2.0",

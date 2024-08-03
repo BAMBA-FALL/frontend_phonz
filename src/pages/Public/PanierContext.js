@@ -51,7 +51,6 @@ export const PanierProvider = ({ children }) => {
   );
 };
 
-<<<<<<< HEAD
 export const usePanier = () => {
   const context = useContext(PanierContext);
   if (!context) {
@@ -59,7 +58,3 @@ export const usePanier = () => {
   }
   return context;
 };
-=======
-
-export default PanierProvider;
->>>>>>> dee5755be48440393c77323597d4561bcec40f91

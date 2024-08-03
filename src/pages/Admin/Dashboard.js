@@ -1,12 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { productService } from '../../_services/product.service';
-<<<<<<< HEAD
 import { userService } from '../../_services/user.service'; // Assurez-vous que vous avez importé userService
-=======
-import SideMenu from '../../component/admin/SideMenu'; 
-import AdminHeader from '../../component/admin/AdminHeader'
->>>>>>> dee5755be48440393c77323597d4561bcec40f91
 import './dashboard.css';
 
 const Dashboard = () => {
@@ -39,6 +34,7 @@ const Dashboard = () => {
     // Appel des deux fonctions de récupération des données
     fetchProductCount();
     fetchUserCount();
+    setLoading(false); // Marquer le chargement comme terminé après la récupération des données
   }, []);
 
   return (
@@ -51,13 +47,13 @@ const Dashboard = () => {
         <img src={require('../../images/image1.jpg')} alt="Profile" className="dashboard-profile-image" />
       </div>
       <div className="dashboard-cards-container">
-        <Link to="/admin/user/index" className="dashboard-card">
+        <Link to="/admin/product" className="dashboard-card">
           <div className="dashboard-card-content">
             <h3>Nombre total de produits</h3>
             <p>{productCount}</p>
           </div>
         </Link>
-        <Link to="/admin/user/index" className="dashboard-card">
+        <Link to="/admin/user" className="dashboard-card">
           <div className="dashboard-card-content">
             <h3>Nombre total d'utilisateurs</h3>
             <p>{userCount}</p>

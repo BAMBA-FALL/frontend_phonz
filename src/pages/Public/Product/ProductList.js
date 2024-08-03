@@ -37,7 +37,7 @@ const ProductList = () => {
     <div className='product-container'>
       {products.map(product => (
         <Link key={product._id} to={`/products/${product._id}`} className="product-card">
-          <img className='product-image' src={`https://backend-e-fdv6.vercel.app/uploads/${product.images[0]}`} alt={product.title} />
+          <img className='product-image' src={`http://localhost:4000/uploads/${product.images[0]}`} alt={product.title} />
           <div className="product-details">
             <h3 className='product-item'>{product.title}</h3>
             <p className='product-item'> {product.description}</p>
