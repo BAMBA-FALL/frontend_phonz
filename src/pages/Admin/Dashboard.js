@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { productService } from '../../_services/product.service';
-import { userService } from '../../_services/user.service'; // Assurez-vous que vous avez importé userService
+import { userService } from '../../_services/user.service';
 import './dashboard.css';
 
 const Dashboard = () => {
@@ -23,8 +23,8 @@ const Dashboard = () => {
 
     const fetchUserCount = async () => {
       try {
-        const response = await userService.getUserCount(); // Assurez-vous que getUserCount est défini dans user.service.js
-        setUserCount(response.count);
+        const count = await userService.getUserCount();
+        setUserCount(count);
       } catch (error) {
         console.error("Erreur lors de la récupération du nombre d'utilisateurs:", error);
         setError('Erreur lors de la récupération du nombre d\'utilisateurs');

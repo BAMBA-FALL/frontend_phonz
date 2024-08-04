@@ -93,8 +93,8 @@
   margin-right: 10px;
 } */
 .product-title {
-  font-size: 24px; /* Taille de police pour le titre */
-  font-weight: bold; /* Pour mettre en gras */
+  font-size: 24px; 
+  font-weight: bold;
 }
 
 .product-description {
@@ -104,9 +104,9 @@
 }
 
 .product-price {
-  font-size: 18px; /* Taille de police pour le prix */
-  color: #e74c3c; /* Couleur du texte (rouge) */
-  font-weight: bold; /* Gras */
+  font-size: 18px; 
+  color: #e74c3c; 
+  font-weight: bold; 
 }
 
 
@@ -143,18 +143,19 @@
 
 .color-buttons{
   display: flex;
-  /* justify-content: space-around; */
+  justify-content: space-around;
   border-radius: 5px;
-  padding: 20px;
-  margin: 20px;
+  padding: 15px;
+  margin: 15px;
 }
 .carre-bouton{
   display: flex;
   border: 1px solid grey;
   justify-content: center;
   border-radius: 5px;
-  width: 30px;
-  height: 30px;
+  width: 100px;
+  height: 40px;
+  margin: 5px;
   cursor: pointer;
   background-color: #fff;
 }
@@ -197,9 +198,9 @@
 .etat-list{
   display: flex;
   flex-direction: row;
-  /* flex-wrap: wrap;
+  flex-wrap: wrap;
   align-items: center; 
-  text-align: center; */
+  text-align: center;
 }
 
 .etat-appareil{
@@ -224,11 +225,11 @@
 /* Ajoutez des styles pour les écrans de petite taille */
 @media screen and (max-width: 768px) {
   .details-item {
-      flex-direction: column; /* Afficher les éléments en colonne sur les petits écrans */
-      align-items: flex-start; /* Aligner les éléments à gauche */
+      flex-direction: column; 
+      align-items: flex-start; 
   }
 
   .items {
-      text-align: left; /* Aligner le texte à gauche */
+      text-align: left;
   }
 }
