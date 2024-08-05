@@ -10,7 +10,7 @@ import HomePage from './Homepage';
     <div>
       {/* <CarouselProduct/> */}
       {/* <HomePage/> */}
-      <ProductList/>
+      {/* <ProductList/> */}
     </div>
 
   );

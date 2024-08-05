@@ -16,6 +16,17 @@ const SideMenu = () => {
         <nav className="admin-nav">
           <ul>
             <li><Link to="/">Mon site</Link></li>
+            <li className={`nav-dropdown ${activeMenu === 'homepage' ? 'active' : ''}`}>
+              <span onClick={() => toggleDropdown('homepage')}>
+                Page d'accueil
+                <span className={`arrow ${activeMenu === 'homepage' ? 'up' : 'down'}`}>▼</span>
+              </span>
+              <ul>
+                <li><Link to="/admin/homepage/admin">Page d'Accueil</Link></li>
+                <li><Link to="/admin/homepage/add-section">Ajouter une Section</Link></li> {/* Lien pour ajouter une nouvelle section */}
+                <li><Link to="/admin/homepage/edit/:id">Modifier la Page d'Accueil</Link></li> 
+              </ul>
+            </li>
             <li className={`nav-dropdown ${activeMenu === 'utilisateurs' ? 'active' : ''}`}>
               <span onClick={() => toggleDropdown('utilisateurs')}>
                 Utilisateurs
@@ -41,18 +52,6 @@ const SideMenu = () => {
                 <li><Link to="/admin/product/delete/:id">Supprimer</Link></li>
               </ul>
             </li>
-            <li className={`nav-dropdown ${activeMenu === 'carousels' ? 'active' : ''}`}>
-              <span onClick={() => toggleDropdown('carousels')}>
-                Carousels
-                <span className={`arrow ${activeMenu === 'carousels' ? 'up' : 'down'}`}>▼</span>
-              </span>
-              <ul>
-                <li><Link to="/admin/carousel/index">Liste de Carousel</Link></li>
-                <li><Link to="/admin/carousels/add">Ajouter un Carousel</Link></li>
-                <li><Link to="/admin/carousels/edit/:id">Modifier le carousel</Link></li>
-                <li><Link to="/admin/carousels/delete/:id">Supprimer le carousel</Link></li>
-              </ul>
-            </li>
             <li className={`nav-dropdown ${activeMenu === 'categories' ? 'active' : ''}`}>
               <span onClick={() => toggleDropdown('categories')}>
                 Mes catégories
@@ -65,6 +64,19 @@ const SideMenu = () => {
                 <li><Link to="/admin/category/delete/:id">Supprimer un catégorie</Link></li>
               </ul>
             </li>
+            <li className={`nav-dropdown ${activeMenu === 'carousels' ? 'active' : ''}`}>
+              <span onClick={() => toggleDropdown('carousels')}>
+                Carousels
+                <span className={`arrow ${activeMenu === 'carousels' ? 'up' : 'down'}`}>▼</span>
+              </span>
+              <ul>
+                <li><Link to="/admin/carousel/index">Liste de Carousel</Link></li>
+                <li><Link to="/admin/carousels/add">Ajouter un Carousel</Link></li>
+                <li><Link to="/admin/carousels/edit/:id">Modifier le carousel</Link></li>
+                <li><Link to="/admin/carousels/delete/:id">Supprimer le carousel</Link></li>
+              </ul>
+            </li>
+          
             <li className={`nav-dropdown ${activeMenu === 'commandes' ? 'active' : ''}`}>
               <span onClick={() => toggleDropdown('commandes')}>
                 Commandes
@@ -72,17 +84,6 @@ const SideMenu = () => {
               </span>
               <ul>
                 <li><Link to="/admin/product/index">Liste</Link></li>
-              </ul>
-            </li>
-            <li className={`nav-dropdown ${activeMenu === 'homepage' ? 'active' : ''}`}>
-              <span onClick={() => toggleDropdown('homepage')}>
-                Page d'accueil
-                <span className={`arrow ${activeMenu === 'homepage' ? 'up' : 'down'}`}>▼</span>
-              </span>
-              <ul>
-                <li><Link to="/admin/homepage/admin">Configurer la Page d'Accueil</Link></li>
-                <li><Link to="/admin/homepage/add-section">Ajouter une Section</Link></li> {/* Lien pour ajouter une nouvelle section */}
-                <li><Link to="/admin/homepage/edit/:id">Modifier la Page d'Accueil</Link></li> 
               </ul>
             </li>
           </ul>

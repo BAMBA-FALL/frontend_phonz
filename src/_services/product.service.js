@@ -1,16 +1,19 @@
 import Axios from "./caller.service";
 
 
-const getProducts = async () => {
-    try {
-      const response = await Axios.get('/api/products');
-      console.log('Response from getProducts:', response.data); 
+// Obtenir les produits avec des filtres de recherche, catégorie et sous-catégorie
+const getProducts = async ({ search = '', category = '', subcategory = '' }) => {
+  try {
+      const response = await Axios.get('/api/products', {
+          params: { search, category, subcategory }
+      });
+      console.log('Response from getProducts with filters:', response.data); 
       return response.data; 
-    } catch (error) {
+  } catch (error) {
+      console.error('Error fetching products with filters:', error);
       throw error; 
-    }
   }
-
+};
 
 
   const getProductById = async (productId) => {

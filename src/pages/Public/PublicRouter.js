@@ -14,13 +14,12 @@ const PublicRouter = () => {
     return (
         <Routes>
             <Route element={<Layout />}>
-                <Route index element={<Home />} />
-                <Route path="home" element={<Home />} />
+                <Route index element={<Homepage />} />
+                <Route path="homepage" element={<Homepage />} />
                 <Route path="service" element={<Service />} />
                 <Route path="contact" element={<Contact />} />
                 <Route path="shoppingcart" element={<ShoppingCart />} />
                 <Route path="searchresults" element={<SearchResults />} />
-                <Route path="login" element={<Login />} />
                 <Route path="signinform" element={<SignInForm />} />
                 <Route path="productlist" element={<ProductList />} />
                 <Route path="products/:productId" element={<ProductDetails />} />
@@ -32,6 +31,7 @@ const PublicRouter = () => {
                 <Route path="subcategory/:subcategoryId" element={<SubcategoryPage />} /> {/* Route pour SubcategoryPage */}
             </Route>
             <Route path="*" element={<Error />} />
+            <Route path="login" element={<Login />} />
         </Routes>
     );
 };
