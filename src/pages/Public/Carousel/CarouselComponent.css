@@ -1,0 +1,82 @@
+/* Conteneur principal de l'en-tête */
+.header {
+    display: flex;
+    flex-direction: column;
+    background-color: #f8f8f8;
+    position: sticky;
+    top: 0; 
+    z-index: 1000; 
+    width: 100%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin: 0; /* Assurez-vous qu'il n'y a pas de marge par défaut */
+    padding: 0; /* Assurez-vous qu'il n'y a pas de padding par défaut */
+  }
+  
+  /* En-tête inférieur */
+  .bottom-nav {
+    justify-content: flex-start;
+    position: relative;
+    margin: 0; /* Élimine les marges */
+    padding: 0; /* Élimine les padding */
+  }
+  
+  /* Conteneur principal du carrousel */
+  .carousel-container {
+    margin: 0; /* Élimine les marges */
+    padding: 0; /* Élimine les padding */
+  }
+  
+  .carousel-slide {
+    position: relative;
+  }
+  
+  /* Style pour les images du carrousel */
+  .carousel-image {
+    max-width: 100%;
+    height: auto;
+    object-fit: cover;
+  }
+  
+  /* Si vous utilisez un conteneur pour le carrousel */
+  .carousel-content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-align: center;
+    z-index: 1;
+  }
+  
+  /* Autres styles du carrousel */
+  .carousel-title {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  .carousel-description {
+    font-size: 1rem;
+    margin-bottom: 1rem;
+  }
+  
+  .carousel-images {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    position: relative;
+    z-index: 0;
+  }
+  
+  .carousel-image {
+    max-width: 100%;
+    height: auto;
+    object-fit: cover;
+  }
+  

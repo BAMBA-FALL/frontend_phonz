@@ -1,0 +1,120 @@
+/* Conteneur principal */
+.product-table-container {
+  padding: 20px;
+  background-color: #f5f5f5;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Titre de la page */
+.product-table-container h2 {
+  font-size: 24px;
+  font-weight: 600;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+/* Tableau */
+.product-table {
+  width: 100%; /* S'assure que le tableau utilise toute la largeur disponible */
+  border-collapse: collapse;
+  background-color: #fff;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+/* En-tête du tableau */
+.product-table th {
+  background-color: #fafafa;
+  font-weight: 500;
+  text-align: center;
+  padding: 10px;
+}
+
+/* Cellules du tableau */
+.product-table td {
+  text-align: center;
+  padding: 10px;
+  vertical-align: middle;
+  font-size: 14px;
+}
+
+/* Description tronquée */
+.product-table td div {
+  text-align: left;
+}
+
+/* Image des produits */
+.image-admin {
+  max-width: 100px;
+  max-height: 100px;
+  border-radius: 4px;
+  object-fit: cover;
+  transition: transform 0.2s;
+}
+
+.image-admin:hover {
+  transform: scale(1.05);
+}
+
+/* Boutons d'action */
+.button-cell {
+  display: flex;
+  justify-content: center;
+  gap: 10px; /* Espace entre les boutons */
+  min-width: 180px; /* Assurez-vous que la cellule des boutons a suffisamment d'espace */
+}
+
+/* Largeur des boutons pour s'assurer qu'ils s'affichent bien */
+.product-table button {
+  flex: 1; /* Permet aux boutons de s'étendre de manière égale */
+  padding: 6px 12px; /* Ajustez le padding si nécessaire pour réduire la taille */
+  font-size: 14px;
+  border-radius: 4px;
+  font-weight: 500;
+  border: none;
+  cursor: pointer;
+}
+
+.btn-voir {
+  background-color: #1890ff;
+  color: #fff;
+}
+
+.btn-voir:hover {
+  background-color: #40a9ff;
+  border-color: #1890ff;
+}
+
+.btn-edit {
+  background-color: #52c41a;
+  color: #fff;
+}
+
+.btn-edit:hover {
+  background-color: #73d13d;
+  border-color: #52c41a;
+}
+
+.btn-delete {
+  background-color: #ff4d4f;
+  color: #fff;
+}
+
+.btn-delete:hover {
+  background-color: #ff7875;
+  border-color: #ff4d4f;
+}
+
+/* Chargement */
+.loading-container {
+  text-align: center;
+  padding: 20px;
+}
+
+/* Erreur */
+.error-message {
+  color: #ff4d4f;
+  text-align: center;
+  font-size: 16px;
+}

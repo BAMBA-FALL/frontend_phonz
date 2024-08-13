@@ -1,0 +1,27 @@
+/* PaymentPage.css */
+
+.container {
+    max-width: 600px;
+    margin: auto;
+    padding: 20px;
+  }
+  
+  .formItem {
+    margin-bottom: 16px;
+  }
+  
+  .cardElement {
+    border: 1px solid #d9d9d9;
+    border-radius: 4px;
+    padding: 10px;
+    background: #fff;
+  }
+  
+  .buttonContainer {
+    margin-top: 20px;
+  }
+  
+  .button {
+    width: 100%;
+  }
+  

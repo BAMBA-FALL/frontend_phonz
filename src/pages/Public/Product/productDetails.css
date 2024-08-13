@@ -1,0 +1,232 @@
+/* .details-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+}
+
+.details-item{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    margin: 20px;
+}
+
+
+.buttonClass {
+    font-size:15px;
+    font-family:Arial;
+    width:200px;
+    height:54px;
+    border-width:1px;
+    color:#fff;
+    border-color:rgba(0, 0, 0, 1);
+    font-weight:bold;
+    border-top-left-radius:4px;
+    border-top-right-radius:4px;
+    border-bottom-left-radius:4px;
+    border-bottom-right-radius:4px;
+    box-shadow: 0px 10px 14px -7px rgba(87, 92, 85, 1);
+    text-shadow: 0px 1px 0px rgba(72, 75, 71, 1);
+    background:linear-gradient(rgba(0, 0, 0, 1), rgba(0, 0, 0, 1));
+  }
+  
+  .buttonClass:hover {
+    background: linear-gradient(rgba(0, 0, 0, 1), rgba(0, 0, 0, 1));
+  }
+      */
+
+
+/* ProductDetails.css */
+/* productDetails.css */
+.product-details-container {
+  display: flex;
+  align-items: center;
+  /* background-color: #007bff; */
+}
+
+.product-additional-images {
+  display: flex;
+  flex-direction: column;
+  /* background-color: #0056b3; */
+}
+
+/* .together{
+  display: flex;
+  width: 600px;
+  background-color: #0056b3;
+} */
+
+.product-additional-image {
+  width: 80px;
+  height: auto;
+  margin-bottom: 10px;
+  cursor: pointer;
+  margin: 20px;
+}
+
+.product-additional-image {
+  width: 80px;
+  height: 80px;
+  margin-bottom: 10px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.product-additional-image.highlighted {
+  border: 2px solid blue;
+  /* border: 2px solid gray;   */
+  border-radius: 10px;
+}
+
+.product-items {
+  background-color: #fff;
+  width: 40%; 
+  height: 450px;
+  text-align: center;
+  margin: 50px;
+  border-radius: 10px;
+
+}
+/* .capacity-label {
+  display: flex;
+  margin-right: 10px;
+} */
+.product-title {
+  font-size: 24px; /* Taille de police pour le titre */
+  font-weight: bold; /* Pour mettre en gras */
+}
+
+.product-description {
+  font-size: 16px; /* Taille de police pour la description */
+  color: #666; /* Couleur du texte (gris) */
+}
+
+.product-price {
+  font-size: 18px; /* Taille de police pour le prix */
+  color: #e74c3c; /* Couleur du texte (rouge) */
+  font-weight: bold; /* Gras */
+}
+
+
+.product-highlighted-image-container {
+  width: 40%; 
+  display: flex;
+  justify-content: center; 
+  align-items: center; 
+  margin-top: 30px;
+  border-radius: 10px;
+
+}
+
+.product-highlighted-image {
+  max-width: 100%; 
+  max-height: 100%; 
+}
+
+.buttonClass {
+  margin-top: 10px;
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.buttonClass:hover {
+  background-color: #0056b3;
+}
+
+/* La couleur des cercles à côté de mes produit */
+
+/* .color-buttons{
+  display: flex;
+  border: 1px solid grey;
+  border-radius: 5px;
+} */
+.carre-bouton{
+  display: flex;
+  flex-direction:column;
+  border: 1px solid grey;
+  justify-content: center;
+  border-radius: 5px;
+  /* align-items: center; */
+  width: 100px;
+  cursor: pointer;
+  background-color: #fff;
+}
+
+.carre-bouton:hover{
+  background-color: #f0f0f0;
+  
+}
+
+
+.color-button{
+  width: 20px;
+  height: 20px;
+  border-radius: 20px;
+  border: none;
+  margin: 5px;
+  cursor: pointer;
+}
+
+.storagelist {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center; 
+  text-align: center;
+}
+
+.storageCapacity {
+  width: 60px;
+  height: 35px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #fff;
+  border: 1px solid blueviolet;
+  margin: 10px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.etat-list{
+  display: flex;
+  flex-direction: row;
+  /* flex-wrap: wrap;
+  align-items: center; 
+  text-align: center; */
+}
+
+.etat-appareil{
+  width: 60px;
+  height: 35px;
+  /* display: flex; */
+  justify-content: center;
+  align-items: center;
+  background-color: #fff;
+  border: 1px solid blueviolet;
+  margin: 10px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.errorMessage {
+  color: red;
+  font-size: 14px;
+  margin-top: 10px;
+}
+
+/* Ajoutez des styles pour les écrans de petite taille */
+@media screen and (max-width: 768px) {
+  .details-item {
+      flex-direction: column; /* Afficher les éléments en colonne sur les petits écrans */
+      align-items: flex-start; /* Aligner les éléments à gauche */
+  }
+
+  .items {
+      text-align: left; /* Aligner le texte à gauche */
+  }
+}

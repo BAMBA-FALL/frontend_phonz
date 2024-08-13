@@ -1,0 +1,75 @@
+/* Dans votre fichier CSS */
+
+ .slider-item {
+    position: relative; 
+    flex-direction: column;
+}
+
+.slider-item h3,
+.slider-item p {
+    position: absolute;
+    top: 10px; 
+    left: 50%; 
+    transform: translateX(-50%); 
+    z-index: 1;
+    color: white; 
+    background-color: rgba(0, 0, 0, 0.5); 
+    padding: 5px 10px; 
+}
+
+.slider-image {
+    max-width: 70%;
+    height: auto;
+}
+.slider-container {
+    display: flex;
+    flex-direction: column; 
+    justify-content: center;
+    align-items: center;
+    overflow-x: auto; 
+} 
+
+
+/** STYLE CAROUSEL JAVASCRIPT**/
+/* carousel.css */
+
+/* .carousel {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+} */
+
+/* .carousel > div {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  visibility: hidden; 
+}
+
+.carousel > div.visible {
+  visibility: visible; 
+}
+
+.carousel img {
+  width: 100%;
+  height: auto;
+}
+
+.carousel button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.carousel button.prev {
+  left: 10px;
+}
+
+.carousel button.next {
+  right: 10px;
+} */

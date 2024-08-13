@@ -1,0 +1,29 @@
+.carousel-list-container {
+    width: 100%;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.carousel-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.carousel-item {
+    border: 1px solid #ccc;
+    padding: 10px;
+    width: calc(33.333% - 20px);
+    box-sizing: border-box;
+}
+
+.carousel-image {
+    max-width: 100%;
+    height: auto;
+}
+
+.carousel-actions {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+}

@@ -1,0 +1,149 @@
+/* header.css */
+
+/* Conteneur principal de l'en-tête */
+.header {
+  display: flex;
+  flex-direction: column;
+  background-color: #f8f8f8;
+  position: sticky;
+  top: 0; 
+  z-index: 1000; 
+  width: 100%;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin: 0; /* Assurez-vous qu'il n'y a pas de marge par défaut */
+  padding: 0; /* Assurez-vous qu'il n'y a pas de padding par défaut */
+  border-bottom: 1px solid #ddd; /* Assure une séparation claire sans espace */
+}
+
+/* En-tête supérieur */
+.top-nav {
+  display: flex;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: #fff;
+  border-bottom: 1px solid #ddd;
+}
+
+/* En-tête inférieur */
+.bottom-nav {
+  display: flex;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: #fff;
+  border-bottom: 1px solid #ddd;
+  margin: 0; /* Élimine les marges */
+}
+
+/* Logo */
+.logo {
+  width: 100px;
+  height: 100px;
+  margin-right: 20px;
+}
+
+/* Conteneur de la recherche */
+.search-container {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+/* Barre de recherche */
+.search-bar {
+  position: relative;
+  width: 100%;
+  max-width: 500px;
+  height: 35px;
+}
+
+/* Champ de recherche */
+.input-search {
+  width: 100%;
+  padding: 10px 40px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  outline: none; 
+}
+
+/* Icône de recherche */
+.search-icon {
+  position: absolute;
+  top: 50%;
+  right: 0;
+  transform: translateY(-50%);
+  cursor: pointer;
+  width: 50px;
+  height: 35px;
+  background-color: #60B0F4;
+  border: none;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Actions utilisateur */
+.user-actions {
+  display: flex;
+  align-items: center;
+  margin-left: auto;
+}
+
+/* Panier */
+.cart {
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+/* Compteur de panier */
+.cart-count {
+  position: absolute;
+  top: -5px;
+  right: -10px;
+  background-color: #ff0000; 
+  color: white;
+  border-radius: 50%;
+  padding: 2px 6px;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+/* Menu déroulant */
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #fff;
+  padding: 20px;
+  list-style: none;
+  margin: 0;
+  width: 300px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Affichage du menu déroulant au survol */
+.dropdown:hover .dropdown-menu {
+  display: block;
+}
+
+/* Sous-menu */
+.submenu {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 100%;
+  background-color: #fff;
+  padding: 20px;
+  list-style: none;
+  margin: 0;
+  width: 300px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+}
+
+/* Affichage du sous-menu au survol */
+.dropdown-menu li:hover .submenu {
+  display: block;
+}

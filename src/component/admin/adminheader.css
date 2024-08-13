@@ -1,0 +1,14 @@
+.admin-header {
+  background: #fff;
+  padding: 0 24px;
+  height: 64px;
+  line-height: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: fixed;
+  top: 0;
+  left: 250px; /* Largeur du SideMenu pour aligner le header */
+  right: 0;
+  z-index: 1001; /* Le z-index est un peu plus élevé pour que le header soit au-dessus du SideMenu */
+}

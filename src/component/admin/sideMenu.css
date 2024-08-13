@@ -1,0 +1,11 @@
+.admin-sider {
+  /* background: #001529; */
+  background-color: #60B0F4;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 250px;
+  overflow-y: auto; /* Permet le défilement si le menu est trop long */
+  z-index: 1000;
+}

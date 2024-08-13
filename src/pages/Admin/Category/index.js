@@ -1,0 +1,5 @@
+export { default as Category} from './Category'
+export { default as CategoryForm } from './CategoryForm'
+export { default as EditCategory} from './EditCategory'
+// export { default as UpdateCategory} from './UpdateCategory'
+export { default as DeleteCategory} from './DeleteCategory'

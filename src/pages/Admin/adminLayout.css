@@ -1,0 +1,30 @@
+/* Layout pour le reste de la page */
+.site-layout {
+  margin-left: 100px; /* Décale tout le contenu à droite pour le SideMenu */
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  overflow: hidden; /* Empêche le débordement non voulu */
+}
+
+/* Contenu centré avec défilement si nécessaire */
+.admin-content {
+  margin-top: 64px; /* Espace sous le Header */
+  padding: 24px;
+  background: #f0f2f5;
+  flex-grow: 1;
+  overflow-y: auto; /* Permet le défilement du contenu si nécessaire */
+  height: calc(100vh - 64px); /* Ajuste la hauteur pour tenir compte du header */
+}
+
+/* Footer */
+.admin-footer {
+  text-align: center;
+  background: #fff;
+  padding: 10px;
+  position: fixed;
+  bottom: 0;
+  left: 250px;
+  right: 0;
+  z-index: 1000; /* Assure que le footer ne soit pas masqué par le contenu */
+}

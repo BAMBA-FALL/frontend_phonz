@@ -1,0 +1,17 @@
+/* global.css */
+
+/* Appliquer la grille aux composants */
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 colonnes égales */
+    grid-gap: 20px; /* Espacement entre les éléments de la grille */
+  }
+  
+  /* Style des éléments de la grille */
+  .grid-item {
+    background-color: #f0f0f0;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
