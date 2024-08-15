@@ -1,7 +1,7 @@
 import axios from "axios";
 import { accountService } from "./account.service";
 const Axios = axios.create({
-    baseURL: "https://localhost:4000",
+    baseURL: "http://localhost:4000",
     withCredentials: true,
 })
 

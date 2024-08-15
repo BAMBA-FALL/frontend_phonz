@@ -94,9 +94,28 @@ const getAllCategoriesWithSubcategories = async () => {
       throw error; 
     }
   };
+  
+const getProductsBySubcategory = async (subcategoryId) => {
+    try {
+        const response = await Axios.get(`/api/products/subcategory/${subcategoryId}`);
+        return response.data;
+    } catch (error) {
+        throw error;
+    }
+};
 
-  
-  
+
+// Obtenir une sous-catégorie par son ID
+const getSubcategoryById = async (subcategoryId) => {
+    try {
+        const response = await Axios.get(`/api/categories/${subcategoryId}`);
+        return response.data;
+    } catch (error) {
+        throw error;
+    }
+};
+
+
   
 
 export const categoryService = {
@@ -107,6 +126,8 @@ export const categoryService = {
     deleteCategory,
     getProductsByCategory,
     getSubCategories,
-    getAllCategoriesWithSubcategories
+    getAllCategoriesWithSubcategories,
+    getProductsBySubcategory,
+    getSubcategoryById
     
 };

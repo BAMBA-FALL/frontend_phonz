@@ -1,105 +1,91 @@
-import caller from './caller.service';
+import Axios from './caller.service';
 
-async function getAllConfigs() {
-  try {
-    const response = await caller.call({ method: 'get', url: '/homepage-config' });
-    return response.data;
-  } catch (error) {
-    console.error('Erreur lors de la récupération des configurations:', error);
-    throw error;
-  }
-}
+// Ajouter une nouvelle configuration de la page d'accueil
+const addHomepageConfig = async (configData, images) => {
+    try {
+        const formData = new FormData();
+        formData.append('sectionTitle', configData.sectionTitle);
+        formData.append('order', configData.order);
+        if (configData.categoryId) formData.append('categoryId', configData.categoryId);
+        if (configData.subcategoryId) formData.append('subcategoryId', configData.subcategoryId);
 
-async function getConfigById(id) {
-  try {
-    const response = await caller.call({ method: 'get', url: `/homepage-config/${id}` });
-    return response.data;
-  } catch (error) {
-    console.error(`Erreur lors de la récupération de la configuration avec ID ${id}:`, error);
-    throw error;
-  }
-}
+        // Ajouter les images et leurs tailles
+        images.forEach((image, index) => {
+            formData.append('images', image.file);
+            formData.append(`width_${image.name}`, image.width);
+            formData.append(`height_${image.name}`, image.height);
+        });
 
-async function createConfig(configData) {
-  try {
-    const formData = new FormData();
-    formData.append('sectionTitle', configData.sectionTitle);
-    formData.append('order', configData.order);
-    if (configData.categoryId) {
-      formData.append('categoryId', configData.categoryId);
+        const response = await Axios.post('/api/homepage-config', formData, {
+            headers: {
+                'Content-Type': 'multipart/form-data'
+            }
+        });
+
+        return response.data;
+    } catch (error) {
+        throw error;
     }
-    if (configData.subcategoryId) {
-      formData.append('subcategoryId', configData.subcategoryId);
+};
+
+// Obtenir toutes les configurations de la page d'accueil
+const getAllHomepageConfigs = async () => {
+    try {
+        const response = await Axios.get('/api/homepage-config');
+        return response.data;
+    } catch (error) {
+        throw error;
     }
-    if (configData.images) {
-      configData.images.forEach(image => {
-        formData.append('images', image);
-        formData.append(`width_${image.name}`, image.width || 0);
-        formData.append(`height_${image.name}`, image.height || 0);
-      });
+};
+
+// Obtenir une configuration spécifique
+const getHomepageConfigById = async (id) => {
+    try {
+        const response = await Axios.get(`/api/homepage-config/${id}`);
+        return response.data;
+    } catch (error) {
+        throw error;
     }
+};
 
-    const response = await caller.call({
-      method: 'post',
-      url: '/homepage-config',
-      data: formData,
-      headers: {
-        'Content-Type': 'multipart/form-data',
-      },
-    });
+// Mettre à jour une configuration existante
+const updateHomepageConfig = async (id, configData, images) => {
+    try {
+        const formData = new FormData();
+        formData.append('sectionTitle', configData.sectionTitle);
+        formData.append('order', configData.order);
 
-    return response.data;
-  } catch (error) {
-    console.error('Erreur lors de la création de la configuration:', error);
-    throw error;
-  }
-}
+        // Ajouter les nouvelles images
+        images.forEach((image) => {
+            formData.append('images', image.file);
+        });
 
-async function updateConfig(id, configData) {
-  try {
-    const formData = new FormData();
-    formData.append('sectionTitle', configData.sectionTitle);
-    formData.append('order', configData.order);
-    if (configData.images) {
-      configData.images.forEach(image => {
-        formData.append('images', image);
-      });
+        const response = await Axios.put(`/api/homepage-config/${id}`, formData, {
+            headers: {
+                'Content-Type': 'multipart/form-data'
+            }
+        });
+
+        return response.data;
+    } catch (error) {
+        throw error;
     }
+};
 
-    const response = await caller.call({
-      method: 'put',
-      url: `/homepage-config/${id}`,
-      data: formData,
-      headers: {
-        'Content-Type': 'multipart/form-data',
-      },
-    });
+// Supprimer une configuration de la page d'accueil
+const deleteHomepageConfig = async (id) => {
+    try {
+        const response = await Axios.delete(`/api/homepage-config/${id}`);
+        return response.data;
+    } catch (error) {
+        throw error;
+    }
+};
 
-    return response.data;
-  } catch (error) {
-    console.error(`Erreur lors de la mise à jour de la configuration avec ID ${id}:`, error);
-    throw error;
-  }
-}
-
-async function deleteConfig(id) {
-  try {
-    const response = await caller.call({
-      method: 'delete',
-      url: `/homepage-config/${id}`,
-    });
-    return response.data;
-  } catch (error) {
-    console.error(`Erreur lors de la suppression de la configuration avec ID ${id}:`, error);
-    throw error;
-  }
-}
-
-// Exports du service selon la structure demandée
 export const homepageConfigService = {
-  getAllConfigs,
-  getConfigById,
-  createConfig,
-  updateConfig,
-  deleteConfig,
+    addHomepageConfig,
+    getAllHomepageConfigs,
+    getHomepageConfigById,
+    updateHomepageConfig,
+    deleteHomepageConfig
 };

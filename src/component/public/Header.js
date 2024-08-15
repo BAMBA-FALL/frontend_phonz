@@ -31,9 +31,9 @@ const Header = () => {
         console.error('Erreur lors de la récupération des catégories:', error);
       }
     };
-
     fetchCategories();
   }, []);
+  
 
   useEffect(() => {
     if (isLoggedIn) {
@@ -82,9 +82,10 @@ const Header = () => {
         [subcategoryId]: products
       }));
     } catch (error) {
-      console.error('Erreur lors de la récupération des produits:', error);
+      console.error(`Erreur lors de la récupération des produits pour la sous-catégorie ${subcategoryId}:`, error.response ? error.response.data : error.message);
     }
   };
+  
 
   const handleMouseLeave = () => {
     setProductsBySubcategory({});
@@ -95,8 +96,8 @@ const Header = () => {
   return (
     <header className='header'>
       <nav className='top-nav'>
-        <Link to='/homepage'>
-          <img className='logo' src={logo} alt="CALLWAYZ" />
+        <Link to='/productlist'>
+          <img className='logo' src={logo} alt="PHONZ" />
         </Link>
         <div className="search-container">
           <form className="search-bar" onSubmit={handleSearchSubmit}>

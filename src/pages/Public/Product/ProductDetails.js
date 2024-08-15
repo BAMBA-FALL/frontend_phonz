@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { productService } from '../../../_services/product.service';
-import { useParams } from 'react-router-dom';
+import { useParams, useNavigate } from 'react-router-dom'; // Ajoutez useNavigate pour la redirection
 import { usePanier } from '../Panier/PanierContext'; // Assurez-vous que le chemin est correct
 import './productDetails.css';
 
@@ -12,6 +12,7 @@ const ProductDetails = () => {
   const [reservationDate, setReservationDate] = useState(null);
   const { productId } = useParams();
   const { addProductToPanier } = usePanier(); // Assurez-vous que la fonction existe dans votre contexte
+  const navigate = useNavigate(); // Pour la redirection
 
   useEffect(() => {
     const fetchProduct = async () => {
@@ -33,7 +34,7 @@ const ProductDetails = () => {
   const handleAddToCart = () => {
     if (product) {
       addProductToPanier(product._id, 1); // Ajouter le produit avec une quantité de 1
-      setReservationDate(new Date()); // Afficher le champ de saisie de date après avoir ajouté au panier
+      navigate('/shoppingcart'); // Redirection vers la page du panier
     }
   };
 
@@ -96,7 +97,7 @@ const ProductDetails = () => {
               />
             </div>
           ))}
-        </div> 
+        </div>
         <p className='product-price'>Prix {product.price} €</p>
         <p>{product.type}</p>
         <p className="capacity-label">Capacité:</p> 
@@ -107,13 +108,9 @@ const ProductDetails = () => {
             </div>
           ))}
         </div>
-        <button className='buttonClass' onClick={handleAddToCart}>Ajouter au panier</button>
-        {reservationDate && (
-          <div>
-            <label htmlFor="reservationDate">Date de réservation :</label>
-            <input type="date" id="reservationDate" value={reservationDate} onChange={(e) => setReservationDate(e.target.value)} />
-          </div>
-        )}
+        <button className='add-to-cart-button' onClick={handleAddToCart}>
+          Ajouter au panier
+        </button>
       </div>
       {error && <div>{error}</div>}
     </div>

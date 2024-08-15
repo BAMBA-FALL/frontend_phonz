@@ -3,10 +3,10 @@ import { useParams } from 'react-router-dom';
 import { categoryService } from '../../../_services/category.service';
 import { productService } from '../../../_services/product.service';
 import ProductCard from '../Product/ProductCard'; 
-import './SubcategoryPage.css'; // Fichier CSS pour styliser la page de la sous-catégorie
+import './SubcategoryPage.css';
 
 const SubcategoryPage = () => {
-    const { subcategoryId } = useParams(); // Récupère l'ID de la sous-catégorie depuis l'URL
+    const { subcategoryId } = useParams(); 
     const [subcategory, setSubcategory] = useState(null);
     const [products, setProducts] = useState([]);
     const [loading, setLoading] = useState(true);

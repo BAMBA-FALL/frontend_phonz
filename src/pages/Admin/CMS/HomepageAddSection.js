@@ -2,8 +2,8 @@ import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Form, Input, Button, Select, Upload, Image } from 'antd';
 import { UploadOutlined, ReloadOutlined } from '@ant-design/icons';
-import { homepageConfigService } from '../../_services/homepageConfig.service';
-import { categoryService } from '../../_services/category.service';
+import { homepageConfigService } from '../../../_services/homepageConfig.service';
+import { categoryService } from '../../../_services/category.service';
 import './HomepageAddSection.css';
 
 const { Option } = Select;

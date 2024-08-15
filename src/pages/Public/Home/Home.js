@@ -6,7 +6,6 @@ import ProductList from '../Product/ProductList';
 
   return (
     <div>
-      {/* <CarouselProduct/> */}
       <ProductList/>
     </div>
 

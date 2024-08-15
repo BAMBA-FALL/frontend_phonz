@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { homepageConfigService } from '../../../_services/homepageConfig.service';
 import { categoryService } from '../../../_services/category.service';
 import CarouselComponent from '../Carousel/CarouselComponent';
+import ProductList from '../Product/ProductList';
 import './Homepage.css';
 
 const Homepage = () => {
@@ -48,6 +49,7 @@ const Homepage = () => {
         <div className="homepage-container">
             {/* Vérifiez si le carrousel est bien rendu */}
             <CarouselComponent />
+            <ProductList/>
 
             {configs.length > 0 ? (
                 configs.map(config => {

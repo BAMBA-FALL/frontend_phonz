@@ -179,6 +179,9 @@ const SideMenu = () => {
           <Menu.Item key="blog">
             <Link to="/admin/cms/blog">Blog</Link>
           </Menu.Item>
+          <Menu.Item key="section">
+            <Link to="/admin/cms/homepageaddsection">Section de la page</Link>
+          </Menu.Item>
         </Menu.SubMenu>
 
         {/* Paramètres */}

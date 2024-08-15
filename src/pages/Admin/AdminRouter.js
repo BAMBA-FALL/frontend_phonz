@@ -12,7 +12,7 @@ import { Coupons, Banners, EmailMarketing } from '../Admin/Marketing';
 import { StockList, ReplenishMent } from '../Admin/Stock';
 import { SuppliersList, SupplierOrders } from '../Admin/Suppliers';
 import { SupportTickets, ComplaintsHistory } from '../Admin/Complaints';
-import { Page, Blog } from '../Admin/CMS';
+import { Page, Blog, HomepageAddSection } from '../Admin/CMS';
 import { GeneralSettings, UsersPermissions, Integrations } from '../Admin/Settings';
 import { DeliveryMethods, DeliveryTracking } from '../Admin/Deliveries';
 import { AdminLogs, OrderLogs } from '../Admin/Logs';
@@ -94,6 +94,7 @@ const AdminRouter = () => {
                     <Route path='cms'>
                         <Route path='page' element={<Page />} />
                         <Route path='blog' element={<Blog />} />
+                        <Route path='homepageaddsection' element={<HomepageAddSection />} />
                     </Route>
 
                     <Route path='settings'>

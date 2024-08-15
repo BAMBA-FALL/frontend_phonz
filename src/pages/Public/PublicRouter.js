@@ -5,7 +5,7 @@ import { Routes, Route } from 'react-router-dom';
 import  { StripeWrapper, PaymentPage} from '../Public/Payment'
 import { Layout} from '../Public';
 import { Login , SignInForm} from '../Auth'
-import {Homepage, Contact, Service} from '../Public/Home'
+import {Homepage, Contact, Service, Home} from '../Public/Home'
 import { ProductList, ProductDetails, ProductByCategory, ShoppingCart, CartSummary} from '../Public/Product'
 import { CarouselComponent, CarouselProduct } from '../Public/Carousel';
 import { Profile, ProfileUpdate} from '../Public/User'
@@ -17,8 +17,8 @@ const PublicRouter = () => {
   return (
     <Routes>
       <Route element={<Layout />}>
-        <Route index element={<Homepage />} />
-        <Route path="homepage" element={<Homepage />} />
+        <Route index element={<Home />} />
+        <Route path="productlist" element={<Home />} />
         <Route path="service" element={<Service />} />
         <Route path="contact" element={<Contact />} />
         <Route path="shoppingcart" element={<ShoppingCart />} />
@@ -34,7 +34,7 @@ const PublicRouter = () => {
         <Route path="category/:categoryId" element={<CategoryPage />} />
         <Route path="subcategory/:subcategoryId" element={<SubcategoryPage />} />
         <Route path="carouselcomponent" element={<CarouselComponent />} />
-        <Route path="payment" element={<StripeWrapper />} /> {/* Route pour PaymentPage avec Stripe */}
+        <Route path="payment" element={<StripeWrapper />} />
       </Route>
       <Route path="*" element={<Error />} />
     </Routes>

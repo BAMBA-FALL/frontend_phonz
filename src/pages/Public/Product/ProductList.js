@@ -34,28 +34,19 @@ const ProductList = () => {
   }
 
   return (
-    <div className='product-container'>
-      {products.map(product => (
-        <Link key={product._id} to={`/products/${product._id}`} className="product-card">
-          <img className='product-image' src={`http://localhost:4000/uploads/${product.images[0]}`} alt={product.title} />
-          <div className="product-details">
-            <h3 className='product-item'>{product.title}</h3>
-            <p className='product-item'> {product.description}</p>
-            <h3 className='product-item'>Prix: {product.price} €</h3>
-            {/* <div className="button-containerr">
-            <button className='views-button'>
-            <FontAwesomeIcon icon={faEye} /> 
-        </button>
-                 <button className='deletes-button' >
-            <FontAwesomeIcon icon={faTrashAlt} /> 
-        </button>
-          </div> */}
-            </div>
-         
-        </Link>
-      ))}
- 
-    </div>
+    <div className='product-list-container'>
+    {products.map(product => (
+      <Link key={product._id} to={`/products/${product._id}`} className="product-list-card">
+        <img className='product-list-image' src={`http://localhost:4000/uploads/${product.images[0]}`} alt={product.title} />
+        <div className="product-list-details">
+          <h3 className='product-list-item'>{product.title}</h3>
+          <p className='product-list-item'>{product.description}</p>
+          <h3 className='product-list-item'>Prix: {product.price} €</h3>
+        </div>
+      </Link>
+    ))}
+  </div>
+  
   );
 };
 

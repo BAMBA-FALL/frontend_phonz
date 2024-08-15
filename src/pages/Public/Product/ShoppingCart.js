@@ -1,57 +1,108 @@
 import React, { useState, useEffect } from 'react';
-import { usePanier } from '../Panier/PanierContext'; // Utilisez le bon chemin d'importation
+import { Link, useNavigate } from 'react-router-dom';
+import { usePanier } from '../Panier/PanierContext'; // Assurez-vous que le chemin est correct
 import './shoppingCart.css';
+import panier from '../../../assets/panier-vide.png';
 
 const ShoppingCart = () => {
-  const { panier, removeProductFromPanier, clearPanier } = usePanier();
+  const { panier: cartItems, removeProductFromPanier: removeFromCart, updateProductQuantity: updateQuantity, getCartCount, setUserId, getPanier } = usePanier();
   const [totalPrice, setTotalPrice] = useState(0);
-  const [notification, setNotification] = useState(null);
+  const navigate = useNavigate();
+  const userId = localStorage.getItem('userId'); // Assurez-vous que l'ID utilisateur est stocké correctement
+
+  useEffect(() => {
+    if (userId) {
+      setUserId(userId); // Mettre à jour l'ID utilisateur dans le contexte
+    }
+  }, [userId, setUserId]);
+
+  useEffect(() => {
+    const loadPanier = async () => {
+      if (userId) {
+        try {
+          await getPanier(userId); // Charger le panier avec l'ID utilisateur
+        } catch (error) {
+          console.error('Erreur lors de la récupération du panier:', error);
+        }
+      }
+    };
+
+    loadPanier();
+  }, [userId, getPanier]);
 
   useEffect(() => {
     let newTotalPrice = 0;
-    panier.forEach((item) => {
-      const quantity = item.quantite || 1; // Assurer que la quantité n'est pas NaN
-      newTotalPrice += item.price * quantity; // Calculer le prix total
-    });
+    if (cartItems && cartItems.length > 0) {
+      cartItems.forEach((item) => {
+        const quantity = item.quantite || 1;
+        newTotalPrice += item.produit.price * quantity;
+      });
+    }
     setTotalPrice(newTotalPrice);
-  }, [panier]);
+  }, [cartItems]);
+
+  const handleQuantityChange = (productId, quantity) => {
+    if (quantity > 0) {
+      updateQuantity(productId, quantity)
+        .then(() => {
+          console.log('Quantité mise à jour:', productId, quantity);
+        })
+        .catch(error => {
+          console.error('Erreur lors de la mise à jour de la quantité:', error);
+        });
+    }
+  };
 
   const handlePlaceOrder = () => {
-    setNotification("Le site est en cours de développement. La fonctionnalité de commande n'est pas encore disponible."); // Message informatif
+    navigate('/payment', { state: { userId, items: cartItems, totalAmount: totalPrice } });
   };
 
   return (
     <div>
-      <h2>Panier</h2>
-      {notification && <p className="notification">{notification}</p>} {/* Afficher les notifications */}
-      {panier.length === 0 ? (
-        <p>Votre panier est vide.</p>
+      <h2>Détails de votre panier</h2>
+      {cartItems.length === 0 ? (
+        <div className='panier-container'>
+          <p>Oupss</p>
+          <p>Votre panier est vide</p>
+          <Link to='/home'>
+            <img className='panier-vide' src={panier} alt="panier-vide" />
+          </Link>
+          <button className='panier-achat'>
+            <Link to="/home">Commencer vos achats</Link>
+          </button>
+        </div>
       ) : (
         <div className='shopping-cart-container'>
-          {panier.map((item) => (
-            <div className='cart-item' key={item.produitId}>
-              {/* Afficher les détails du produit */}
-              <img
-                className='product-image-panier'
-                src={`http://localhost:4000/uploads/${item.image}`} // Assurez-vous que les images existent
-                alt={item.title} // Assurez-vous que title existe
-              />
+          {cartItems.map((item) => (
+            <div className='cart-item' key={item.produit._id}>
+              {item.produit.images && item.produit.images[0] ? (
+                <img
+                  className='product-image-panier'
+                  src={`http://localhost:4000/uploads/${item.produit.images[0]}`}
+                  alt={item.produit.title}
+                />
+              ) : (
+                <div className='product-image-placeholder'>No Image</div>
+              )}
               <div className='product-details'>
-                <h3>{item.title}</h3> {/* Assurez-vous que title existe */}
-                <p>Description: {item.description}</p> {/* Assurez-vous que description existe */}
-                <p>Prix: {item.price} €</p> {/* Assurez-vous que price existe */}
-                <p>Quantité: {item.quantite}</p>
+                <h3>{item.produit.title}</h3>
+                <p>Description: {item.produit.description}</p>
+                <p>Prix: {item.produit.price} €</p>
+                <div className="quantity-selector">
+                  <button onClick={() => handleQuantityChange(item.produit._id, Math.max(item.quantite - 1, 1))}>-</button>
+                  <span>{item.quantite}</span>
+                  <button onClick={() => handleQuantityChange(item.produit._id, item.quantite + 1)}>+</button>
+                </div>
               </div>
               <button
                 className='remove-button'
-                onClick={() => removeProductFromPanier(item.produitId)}
+                onClick={() => removeFromCart(item.produit._id)}
               >
                 Retirer
               </button>
             </div>
           ))}
           <p>Prix total: {totalPrice} €</p>
-          <button onClick={clearPanier}>Vider le panier</button>
           <button onClick={handlePlaceOrder}>Passer la commande</button>
         </div>
       )}
